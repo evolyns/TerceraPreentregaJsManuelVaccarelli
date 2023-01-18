@@ -10,14 +10,14 @@ function memesCarrito  ( array ) {
     const nodos = array.reduce(( acc, element ) => {
         return acc + ` 
         <div> <img src = ${element.img}>   </div>
-        <div class=" card card-carrito" id="card-${element.id}">                   
+        <div class="card" id="card-${element.id}">                   
         <h2>
         ${element}
         </h2>    
         <h3>
         ${element.precio}
         </h3>    
-        <button class="boton-carrito" id="borrar-${element.id}">Quitar</button>     
+        <button class="card-carrito" id="borrar-${element.id}">Quitar</button>     
             </div>     
             `
     }, "")
@@ -32,7 +32,7 @@ const contenedorCarrito = document.querySelector(".contieneAlCarrito")
         const elementoCarrito = document.querySelectorAll(".card-carrito")
         for (let i = 0; i < elementoCarrito.length; i++){
             elementoCarrito[i].onclick = () => {
-                const recortar = elementoCarrito[i].id.slice(5)            
+                const recortar = elementoCarrito[i].id.slice(7)            
                 const filtrar = carrito.filter( (filtrado, index) => {
                     return filtrado.id != recortar
                 })
