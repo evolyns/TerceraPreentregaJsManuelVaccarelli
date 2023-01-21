@@ -1,38 +1,109 @@
 // localStorage.clear()
+let mostramosOertas = memes.filter(function(asd) {
+    return asd.oferta === true;
+    
+} ) 
 
-  let carrito = []
+// FILTER 
 
-  const contenedor = document.querySelector(".contenedor")
-  function memeshtml  ( array ) {
+
+
+// SUBE LA IMG
+const contenedorIMGSubida = [{
+    lalala: "asd"
+}]
+
+function imgSube () {
+    console.log("asd")
+}
+
+console.log(contenedorIMGSubida)
+
+        console.log(mostramosOertas)
+
+
+
+// MOSTRAMOS OFERTAS
+
+const contenedorOfertas = document.querySelector(".ofertas")
+function ofertas  ( array ) {
+    const nodos = array.reduce(( acc, ofertas ) => {
+        return acc + ` 
+        <div class="card col-md-6 border-3 text-center  ">       
+            <div class="container-img  ">
+                <img src=${ofertas.img} alt=${ofertas.name} class="w-100" >
+                </div>
+            <h2>
+                ${ofertas.name}
+                </h2>
+                <h3>
+                Precio: ${ofertas.precio}
+            </h3>
+            <h3>
+            categoria: ${ofertas.edad}
+            </h3>  
+            <div> 
+            <button class="botonComprar" id="button-${ofertas.id}"  > Añadir al carrito </button>
+            </div>
+            </div>     
+            `
+        }, "")
+        return nodos
+        
+        
+    }
+    contenedorOfertas.innerHTML = ofertas(mostramosOertas)
+    console.log(memes)
+
+
+
+
+
+
+
+
+// MOSTRAMOS OFERTAS
+
+
+
+
+
+
+let carrito = []
+
+
+
+const contenedor = document.querySelector(".contenedor")
+function memeshtml  ( array ) {
     const nodos = array.reduce(( acc, memes ) => {
         return acc + ` 
         <div class="card  border-3 text-center  ">       
             <div class="container-img  ">
                 <img src=${memes.img} alt=${memes.name} width="550" height="550" class="" >
-            </div>
+                </div>
             <h2>
                 ${memes.name}
-            </h2>
-            <h3>
+                </h2>
+                <h3>
                 Precio: ${memes.precio}
             </h3>
             <h3>
-                categoria: ${memes.edad}
+            categoria: ${memes.edad}
             </h3>  
             <div> 
             <button class="botonComprar" id="button-${memes.id}"  > Añadir al carrito </button>
             </div>
-        </div>     
-        `
-    }, "")
-    return nodos
-
+            </div>     
+            `
+        }, "")
+        return nodos
+        
+        
+    }
+    contenedor.innerHTML = memeshtml(memes)
+    console.log(memes)
     
-}
-console.log(memes)
-contenedor.innerHTML = memeshtml(memes)
-
-
+    
 // FUNCIONES 
 
 const sube = (clave, valor ) => {
@@ -71,6 +142,8 @@ const agregarAlCarrito =() => {
 }
 agregarAlCarrito()
 
-// const carritoActualizado = obtenerSube("carrito") || []
+
 const carritoActualizado = JSON.parse(localstorage.getItem("carrito")) || [] 
 carrito = carritoActualizado
+
+

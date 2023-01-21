@@ -11,7 +11,7 @@ function memesCarrito(array) {
     return (
       acc +
       ` 
-        <div class=" col-md-3  imagenMemeEnCarrito   " > <img src = ${element.img} widht="100" >   
+        <div class=" col-md-3  imagenMemeEnCarrito" > <img src = ${element.img} class=" w-100"  >   
         <div class=" text-danger "  id="card-${element.id}">                   
         <h2>
         ${element.name}
