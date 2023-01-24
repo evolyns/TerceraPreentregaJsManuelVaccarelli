@@ -1,68 +1,21 @@
 // localStorage.clear()
-let mostramosOertas = memes.filter(function(asd) {
-    return asd.oferta === true;
-    
-} ) 
-
-// FILTER 
-
-
-
-// SUBE LA IMG
-const contenedorIMGSubida = [{
-    lalala: "asd"
-}]
-
-function imgSube () {
-    console.log("asd")
-}
-
-console.log(contenedorIMGSubida)
-
-        console.log(mostramosOertas)
-
-
-
-// MOSTRAMOS OFERTAS
-
-const contenedorOfertas = document.querySelector(".ofertas")
-function ofertas  ( array ) {
-    const nodos = array.reduce(( acc, ofertas ) => {
-        return acc + ` 
-        <div class="card col-md-6 border-3 text-center  ">       
-            <div class="container-img  ">
-                <img src=${ofertas.img} alt=${ofertas.name} class="w-100" >
-                </div>
-            <h2>
-                ${ofertas.name}
-                </h2>
-                <h3>
-                Precio: ${ofertas.precio}
-            </h3>
-            <h3>
-            categoria: ${ofertas.edad}
-            </h3>  
-            <div> 
-            <button class="botonComprar" id="button-${ofertas.id}"  > Añadir al carrito </button>
-            </div>
-            </div>     
-            `
-        }, "")
-        return nodos
-        
-        
-    }
-    contenedorOfertas.innerHTML = ofertas(mostramosOertas)
-    console.log(memes)
 
 
 
 
 
+/////////////////////////////////////////////////////////////////////////////////////////
+// MODO OSCURO 
+function enableDarkMode (){
+
+    let cuerpo = document.body;
+    const fondoTarjeta = document.querySelectorAll(".fondoTarjeta")
+            cuerpo.classList.toggle("botonModoOscuro");
+            fondoTarjeta.classList.toggle("fondoTarjeta");
+        }
+/////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-// MOSTRAMOS OFERTAS
 
 
 
@@ -71,28 +24,32 @@ function ofertas  ( array ) {
 
 let carrito = []
 
-
+/////////////////////////////////////////////////////////////////////////////////////////
+// MOSTRAMOS MEMES A LA VENTA 
 
 const contenedor = document.querySelector(".contenedor")
 function memeshtml  ( array ) {
     const nodos = array.reduce(( acc, memes ) => {
-        return acc + ` 
-        <div class="card  border-3 text-center  ">       
+        return acc + `
+         
+        <div class=" card col-md-6 p-2 text-dark " style ="width:20rem">       
             <div class="container-img  ">
-                <img src=${memes.img} alt=${memes.name} width="550" height="550" class="" >
+                <img width="400" height =" 400" src=${memes.img} alt=${memes.name}  class="   card-img-bottom" >
                 </div>
-            <h2>
+                <div class"card-body" >
+                <h2 class=" card-title">
                 ${memes.name}
                 </h2>
-                <h3>
+                <h3 class=" card-subtitle" >
                 Precio: ${memes.precio}
-            </h3>
-            <h3>
-            categoria: ${memes.edad}
-            </h3>  
-            <div> 
-            <button class="botonComprar" id="button-${memes.id}"  > Añadir al carrito </button>
-            </div>
+                </h3>
+                <h3>
+                categoria: ${memes.edad}
+                </h3>  
+                </div>
+                <div> 
+                <button class="botonComprar  card-img-bottom" id="button-${memes.id}"  > Añadir al carrito </button>
+                </div>
             </div>     
             `
         }, "")
@@ -103,7 +60,11 @@ function memeshtml  ( array ) {
     contenedor.innerHTML = memeshtml(memes)
     console.log(memes)
     
-    
+/////////////////////////////////////////////////////////////////////////////////////////
+ 
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 // FUNCIONES 
 
 const sube = (clave, valor ) => {
@@ -124,6 +85,9 @@ const buscarMeme = ( producto, array) => {
 const obtenerSube = ( clave ) => {
     return JSON.parse(localStorage.getItem(clave))
 }
+/////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////
 
 // COMPRAMOS MEMES
 
@@ -147,3 +111,4 @@ const carritoActualizado = JSON.parse(localstorage.getItem("carrito")) || []
 carrito = carritoActualizado
 
 
+/////////////////////////////////////////////////////////////////////////////////////////
