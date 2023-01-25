@@ -1,6 +1,8 @@
-const obtenerSube = (clave) => {
+
+
+function obtenerSube(clave) {
   return JSON.parse(localStorage.getItem("carrito"));
-};
+}
 console.log(JSON.parse(localStorage.getItem("carrito")));
 
 let carrito = obtenerSube("carrito");
@@ -48,3 +50,4 @@ const editarCarrito = () => {
 };
 
 editarCarrito();
+

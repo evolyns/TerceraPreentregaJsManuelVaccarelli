@@ -48,7 +48,7 @@ function memeshtml  ( array ) {
                 </h3>  
                 </div>
                 <div> 
-                <button class="botonComprar  card-img-bottom" id="button-${memes.id}"  > Añadir al carrito </button>
+                <button class="botonComprar" id="button-${memes.id}"  > Añadir al carrito </button>
                 </div>
             </div>     
             `
