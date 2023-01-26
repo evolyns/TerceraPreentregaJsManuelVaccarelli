@@ -1,6 +1,3 @@
-// localStorage.clear()
-
-
 
 
 
@@ -22,7 +19,6 @@ function enableDarkMode (){
 
 
 
-let carrito = []
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // MOSTRAMOS MEMES A LA VENTA 
@@ -91,24 +87,24 @@ const obtenerSube = ( clave ) => {
 
 // COMPRAMOS MEMES
 
-const agregarAlCarrito =() => {
-    const botonesComprarMemes = document.querySelectorAll(".botonComprar")
-    botonesComprarMemes.forEach(boton => {
-        boton.onclick =() =>{
-            const recortarId = boton.id.slice(7)
-            console.log(recortarId)
-            const producto = buscarMeme(recortarId,memes)
-            pusheamos(carrito, producto)
-            sube("carrito", carrito)
-            console.log(carrito)
+const agregarAlCarrito = () => {
+    const botonesComprarMemes = document.querySelectorAll(".botonComprar");
+    botonesComprarMemes.forEach((boton) => {
+      boton.onclick = () => {
+        const devolverCarrito = localStorage.getItem("carrito");
+        if (devolverCarrito != null ){
+            carrito = JSON.parse(devolverCarrito)
         }
-    })
-}
-agregarAlCarrito()
+        const recortarId = boton.id.slice(7);
+        const producto = buscarMeme(recortarId, memes);
+        pusheamos(carrito, producto);
+        sube("carrito", carrito);
+      };
+    });
+  };
+  agregarAlCarrito();
 
-
-const carritoActualizado = JSON.parse(localstorage.getItem("carrito")) || [] 
-carrito = carritoActualizado
+// carrito = carritoActualizado
 
 
 /////////////////////////////////////////////////////////////////////////////////////////

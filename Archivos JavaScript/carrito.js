@@ -37,6 +37,7 @@ const editarCarrito = () => {
   for (let i = 0; i < elementoCarrito.length; i++) {
     elementoCarrito[i].onclick = () => {
       const recortar = elementoCarrito[i].id.slice(7);
+      console.log(recortar)
       const filtrar = carrito.filter((filtrado, index) => {
         return filtrado.id != recortar;
       });
@@ -51,3 +52,13 @@ const editarCarrito = () => {
 
 editarCarrito();
 
+
+
+// const botonCerrarTodo = document.getElementById("#botonCerrarTodo")
+// botonCerrarTodo.onclick = function () {
+  // }
+  function asd (){
+    localStorage.clear();
+    carrito = [];
+window.location.reload()
+  }
