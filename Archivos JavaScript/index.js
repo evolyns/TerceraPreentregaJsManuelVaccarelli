@@ -1,3 +1,5 @@
+let carrito = [];
+
 const tituloIndex = document.querySelector(".tituloIndex");
 tituloIndex.innerHTML = ` 
 <div class="col-md-12"> 
@@ -8,9 +10,9 @@ tituloIndex.innerHTML = `
 </div>
 `;
 /////////////////////////////////////////////////////////////////////////////////
-let mostramosOertas = memes.filter(function (oferta) {
-  return oferta.oferta === true;
-});
+// let mostramosOertas = memes.filter(function (oferta) {
+//   return oferta.oferta === true;
+// });
 
 const contenedorOfertas = document.querySelector(".ofertas");
 function ofertas(array) {
@@ -44,7 +46,7 @@ function ofertas(array) {
   return nodos;
 }
 
-contenedorOfertas.innerHTML = ofertas(mostramosOertas);
+// contenedorOfertas.innerHTML = ofertas(mostramosOertas);
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -76,20 +78,23 @@ const obtenerSube = (clave) => {
 
 // COMPRAMOS MEMES
 
-const agregarAlCarrito = () => {
+const agregarAlCarrito = (memes) => {
   const botonesComprarMemes = document.querySelectorAll(".botonComprar");
   botonesComprarMemes.forEach((boton) => {
     boton.onclick = () => {
       const devolverCarrito = localStorage.getItem("carrito");
-      console.log(devolverCarrito)
-if (devolverCarrito != null ){
-    carrito = JSON.parse(devolverCarrito)
-}
+      console.log(devolverCarrito);
+
+      if (devolverCarrito != null) {
+        carrito = JSON.parse(devolverCarrito);
+      }
       const recortarId = boton.id.slice(7);
       const producto = buscarMeme(recortarId, memes);
-      console.log(carrito)
-      pusheamos(carrito, producto);
-      sube("carrito", carrito);
+      if (producto.agregado === false ) {
+        producto.agregado = true;
+        pusheamos(carrito, producto);
+        sube("carrito", carrito);
+      }
     };
   });
 };
@@ -97,3 +102,17 @@ agregarAlCarrito();
 
 // carrito = carritoActualizado
 /////////////////////////////////////////////////////////////////////////////////////////
+function filtrarData(arr) {
+  let mostramosOertas = arr.filter(function (oferta) {
+    return oferta.oferta === true;
+  });
+  return mostramosOertas;
+}
+fetch("../Archivos JavaScript/memes.json")
+  .then((res) => res.json())
+  .then((data) => {
+    console.log(data.memes);
+    const ofertasMemes = filtrarData(data.memes);
+    contenedorOfertas.innerHTML = ofertas(ofertasMemes);
+    agregarAlCarrito(data.memes);
+  });

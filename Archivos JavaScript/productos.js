@@ -1,5 +1,14 @@
+let carrito = [];
+
+fetch("../Archivos JavaScript/memes.json")
+.then(res => res.json())
+.then(data => {
+  console.log(data.memes)
+  contenedor.innerHTML = memeshtml(data.memes)
+  agregarAlCarrito(data.memes);
 
 
+})
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // MODO OSCURO 
@@ -53,8 +62,6 @@ function memeshtml  ( array ) {
         
         
     }
-    contenedor.innerHTML = memeshtml(memes)
-    console.log(memes)
     
 /////////////////////////////////////////////////////////////////////////////////////////
  
@@ -87,18 +94,23 @@ const obtenerSube = ( clave ) => {
 
 // COMPRAMOS MEMES
 
-const agregarAlCarrito = () => {
+const agregarAlCarrito = (memes) => {
     const botonesComprarMemes = document.querySelectorAll(".botonComprar");
     botonesComprarMemes.forEach((boton) => {
       boton.onclick = () => {
+        console.log("atroden")
         const devolverCarrito = localStorage.getItem("carrito");
         if (devolverCarrito != null ){
             carrito = JSON.parse(devolverCarrito)
         }
         const recortarId = boton.id.slice(7);
+        console.log(recortarId)
         const producto = buscarMeme(recortarId, memes);
+        if (producto.agregado != true) {
+            producto.agregado = true;
         pusheamos(carrito, producto);
         sube("carrito", carrito);
+        }
       };
     });
   };
@@ -108,3 +120,4 @@ const agregarAlCarrito = () => {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////
+
