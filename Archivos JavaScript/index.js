@@ -1,4 +1,6 @@
 let carrito = [];
+
+// BARRA DE NAVEGACION 
 const barraNav = document.querySelector(".barraNav");
 barraNav.innerHTML = ` <div class="container-fluid  ">
 <div class="collapse  navbar-collapse d-flex  justify-content-between  " id="navbarSupportedContent">
@@ -21,8 +23,9 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
   </div>
 </div>
 </div> `;
+// FIN BARRA NAVEGACION 
 /////////////////////////////////////////////////////////////////////////////////
-
+// TITULO INDEX 
 const tituloIndex = document.querySelector(".tituloIndex");
 tituloIndex.innerHTML = ` 
 <div class="col-md-12"> 
@@ -31,9 +34,8 @@ tituloIndex.innerHTML = `
 <div class="col-md-12"> 
 <h2> Los mejores memes</h2>
 </div>
-</div> 
-<h3>OFERTAS!</h3>
-</div>`;
+`;
+// FIN TITULO INDEX
 /////////////////////////////////////////////////////////////////////////////////
 
 const contenedorOfertas = document.querySelector(".ofertas");
@@ -73,7 +75,11 @@ function ofertas(array) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-
+const textoOfertas = document.querySelector(".textoOfertas")
+textoOfertas.innerHTML = `
+</div class=""> 
+<h3>OFERTAS!</h3>
+</div>`
 /////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -118,6 +124,20 @@ const agregarAlCarrito = (memes) => {
         producto.agregado = true;
         pusheamos(carrito, producto);
         sube("carrito", carrito);
+        Toastify({
+          text: "Agregado al carrito",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "bottom", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right,  #C0392B , #96c93d)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
       }
     };
   });
@@ -178,3 +198,33 @@ const localInsert = (clave, valor) => {
   localStorage.setItem(clave, valor);
   console.log(localStorage);
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////
+
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  centeredSlides: false,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

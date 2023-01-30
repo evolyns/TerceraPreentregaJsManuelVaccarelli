@@ -100,7 +100,7 @@ function memesCarrito(array) {
           </div>
           </div>
           <div> 
-          <button class="botonComprar botonComprarHome  " id="button-${memes.id}"  > Añadir al carrito </button>
+          <button class="card-carrito" id="borrar-${memes.id}">Quitar</button>   
           </div>
       </div>
         `
@@ -133,10 +133,8 @@ editarCarrito();
 
 
 
-// const botonCerrarTodo = document.getElementById("#botonCerrarTodo")
-// botonCerrarTodo.onclick = function () {
-  // }
-  function asd (){
+
+  function borrarCarrito (){
     localStorage.clear();
     carrito = [];
 window.location.reload()

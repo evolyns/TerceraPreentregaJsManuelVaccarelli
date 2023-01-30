@@ -33,6 +33,16 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
 </div>
 </div> `
 /////////////////////////////////////////////////////////////////////////////////////////
+
+const tituloProductos = document.querySelector(".tituloProductos")
+tituloProductos.innerHTML = ` 
+<div class=" container  mt-5 ">
+♥ para que no tape al contacto ♥
+</div>`
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
 // MODO OSCURO 
 const revisaElLocal = ( ) =>{
     const m = localStorage.getItem("modo"),
@@ -172,6 +182,7 @@ const agregarAlCarrito = (memes) => {
             producto.agregado = true;
         pusheamos(carrito, producto);
         sube("carrito", carrito);
+        
         }
       };
     });
