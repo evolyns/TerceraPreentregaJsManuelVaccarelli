@@ -1,7 +1,5 @@
-
-
 let carrito = [];
-const barraNav = document.querySelector(".barraNav")
+const barraNav = document.querySelector(".barraNav");
 barraNav.innerHTML = ` <div class="container-fluid  ">
 <div class="collapse  navbar-collapse d-flex  justify-content-between  " id="navbarSupportedContent">
   <ul class="navbar-nav  mb-2 mb-lg-0  ">
@@ -22,9 +20,8 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
   <input type="checkbox"   class=" m-5">
   </div>
 </div>
-</div> `
+</div> `;
 /////////////////////////////////////////////////////////////////////////////////
-
 
 const tituloIndex = document.querySelector(".tituloIndex");
 tituloIndex.innerHTML = ` 
@@ -36,7 +33,7 @@ tituloIndex.innerHTML = `
 </div>
 </div> 
 <h3>OFERTAS!</h3>
-</div>`
+</div>`;
 /////////////////////////////////////////////////////////////////////////////////
 
 const contenedorOfertas = document.querySelector(".ofertas");
@@ -138,86 +135,46 @@ fetch("../Archivos JavaScript/memes.json")
   .then((res) => res.json())
   .then((data) => {
     const ofertasMemes = filtrarData(data.memes);
-    
-    
+
     contenedorOfertas.innerHTML = ofertas(ofertasMemes);
     agregarAlCarrito(data.memes);
   });
 
-  /////////////////////////////////////////////////////////////////////////////////////////
-  
-  // function subeModoOscuroPrimeraVes (){
-//   aplicarModo ()
+/////////////////////////////////////////////////////////////////////////////////////////
 
-//   if (localStorage.getItem("modo") === null){
-//     localStorage.setItem("modo","claro")
-//   }
-// }
-// // subeModoOscuroPrimeraVes ()
+const revisaElLocal = () => {
+  const m = localStorage.getItem("modo"),
+    isNull = !m;
+  if (isNull) {
+    localInsert("modo", "claro");
+  }
+};
 
-// function enableDarkMode() {
-
-//   subeModoOscuroPrimeraVes()
-// }
-// function aplicarModo () {
-//      local = localStorage.getItem("modo");
-//      console.log(local)
-//     if(local === null || local === "oscuro"){
-//       cuerpo.classList.replace("botonModoClaro","botonModoOscuro");
-//       localStorage.setItem("modo","claro")
-//     }
-  
-//     if (local === "claro"){
-//       cuerpo.classList.replace("botonModoClaro","botonModoOscuro");
-//       subeModoOscuro("modo","claro" )
-//       console.log(local) 
-//   }
-   
-// }
-
-// aplicarModo ()
-// let local = localStorage.getItem("modo")
-
-
- const revisaElLocal = ( ) =>{
-    const m = localStorage.getItem("modo"),
-          isNull = !m;
-    if (isNull) {
-      localInsert("modo", "claro" )
-    }
-  };
-
-  let cuerpo = document.body;
-  cuerpo.onload = () => {
+let cuerpo = document.body;
+cuerpo.onload = () => {
   cuerpo.classList.add("botonModoClaro");
-  
+
   const botonModo = document.querySelector("input[type='checkbox']"),
-     modoAlmacenado = localStorage.getItem("modo");
-     console.log(modoAlmacenado)
-   if( ! modoAlmacenado){
-      localInsert("modo","claro")
-      
-     } 
-    if(modoAlmacenado === "oscuro"){
-      cuerpo.classList.replace("botonModoClaro","botonModoOscuro")
-      botonModo.checked = true
- 
-    }
+    modoAlmacenado = localStorage.getItem("modo");
+  console.log(modoAlmacenado);
+  if (!modoAlmacenado) {
+    localInsert("modo", "claro");
+  }
+  if (modoAlmacenado === "oscuro") {
+    cuerpo.classList.replace("botonModoClaro", "botonModoOscuro");
+    botonModo.checked = true;
+  }
 
   botonModo.onclick = (e) => {
     cuerpo.classList.replace(
       e.target.checked ? "botonModoClaro" : "botonModoOscuro",
       e.target.checked ? "botonModoOscuro" : "botonModoClaro"
-    )
-localInsert ("modo",(e.target.checked ? "oscuro" : "claro" ) )
-  }
-}
-
-  
-      
+    );
+    localInsert("modo", e.target.checked ? "oscuro" : "claro");
+  };
+};
 
 const localInsert = (clave, valor) => {
   localStorage.setItem(clave, valor);
- console.log(localStorage)
+  console.log(localStorage);
 };
-

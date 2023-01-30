@@ -76,21 +76,33 @@ let carrito = obtenerSube("carrito");
 console.log(carrito);
 
 function memesCarrito(array) {
-  const nodos = array.reduce((acc, element) => {
+  const nodos = array.reduce((acc, memes) => {
     return (
       acc +
       ` 
-        <div class=" col-md-3  imagenMemeEnCarrito" > <img src = ${element.img} class=" w-100"  >   
-        <div class=" text-danger "  id="card-${element.id}">                   
-        <h2>
-        ${element.name}
-        </h2>    
-        <h3>
-        ${element.precio}
-        </h3>    
-        <button class="card-carrito" id="borrar-${element.id}">Quitar</button>     
-        </div>     
-        </div>
+      <div class=" card cardRelleno  col-lg-3 col-md-3  bordeCard p-2  m-4 mt-3 " style ="width:20rem">       
+      <div class="container-img    ">
+          <img width="300" height =" 300" src=${memes.img} alt=${memes.name}  class="   card-img-bottom" >
+          </div>
+          <div class="cardFondoTexto" >
+          <div class"card-body  " >
+          
+          <h2 class=" card-title cardPrecio ">
+          Precio: ${memes.precio}
+          </h2>
+          
+          <h3 class="card-subtitle" > + <span class="cardCategoria">${memes.edad}</span>
+           </h3>
+          
+          <h3 >#<span class="cardHastahg ">${memes.hashtag}</span>  
+          </h3>
+
+          </div>
+          </div>
+          <div> 
+          <button class="botonComprar botonComprarHome  " id="button-${memes.id}"  > Añadir al carrito </button>
+          </div>
+      </div>
         `
     );
   }, "");

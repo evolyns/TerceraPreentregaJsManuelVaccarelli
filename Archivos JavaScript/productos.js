@@ -95,25 +95,29 @@ function memeshtml  ( array ) {
     const nodos = array.reduce(( acc, memes ) => {
         return acc + `
          
-        <div class=" card col-md-6 p-2 text-center text-dark m-2 " style ="width:20rem">       
-            <div class="container-img  ">
-                <img width="400" height =" 400" src=${memes.img} alt=${memes.name}  class="   card-img-bottom" >
+        <div class=" card cardRelleno  col-lg-3 col-md-3  bordeCard p-2  m-4 mt-3 " style ="width:20rem">       
+            <div class="container-img    ">
+                <img width="300" height =" 300" src=${memes.img} alt=${memes.name}  class="   card-img-bottom" >
                 </div>
-                <div class"card-body" >
-                <h2 class=" card-title">
-                ${memes.name}
-                </h2>
-                <h3 class=" card-subtitle" >
+                <div class="cardFondoTexto" >
+                <div class"card-body  " >
+                
+                <h2 class=" card-title cardPrecio ">
                 Precio: ${memes.precio}
+                </h2>
+                
+                <h3 class="card-subtitle" > + <span class="cardCategoria">${memes.edad}</span>
+                 </h3>
+                
+                <h3 >#<span class="cardHastahg ">${memes.hashtag}</span>  
                 </h3>
-                <h3>
-                categoria: ${memes.edad}
-                </h3>  
-                <button class="botonComprar" id="button-${memes.id}"  > Añadir al carrito </button>
+
+                </div>
                 </div>
                 <div> 
+                <button class="botonComprar botonComprarHome  " id="button-${memes.id}"  > Añadir al carrito </button>
                 </div>
-            </div>     
+            </div>
             `
         }, "")
         return nodos
