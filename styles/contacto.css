@@ -1,0 +1,25 @@
+
+.tituloContactoStyle{
+
+    background-color: rgb(17, 207, 0);
+    border-radius: 5px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.733) ;
+    color: rgb(1, 230, 238);
+
+}
+.contactoForm{
+    background-color: rgba(29, 126, 0, 0.87);
+    border-radius: 5px;
+   
+    border: red double 5px ; 
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: azure;
+
+}
+
+.mensajeContacto{
+height: 200px;
+}

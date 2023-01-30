@@ -1,7 +1,7 @@
   { "memes":[  {
   "id":1,
   "name" :"del expresi" ,
-  "edad": "16+",
+  "edad": "16",
   "hashtag":"politicos",
 "img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
   "precio": 150,
@@ -11,7 +11,7 @@
 {
   "id":2,
   "name" :"ronaldo" ,
-  "edad": "16+",
+  "edad": "16",
   "hashtag":"futbol",
   "img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
   "precio": 150,
@@ -21,7 +21,7 @@
  {
   "id":3,
   "name" :"puede que no sea muy listo" ,
-  "edad": "16+",
+  "edad": "16",
   "hashtag":"forest",
   "img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
   "precio": 150,
@@ -30,7 +30,7 @@
 },
  {"id":4,
   "name" :" Fue el pollo" ,
-  "edad": "16+",
+  "edad": "16",
   "hashtag":"Animales",
   "img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
   "precio": 200,
@@ -39,7 +39,7 @@
 }, 
  {"id":5,
 "name" :" Fue el pollo" ,
-"edad": "16+",
+"edad": "16",
 "hashtag":"Animales",
 "img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
 "precio": 200,
@@ -49,7 +49,17 @@
  {
   "id":6,
   "name" :"fastidio" ,
-  "edad": "12+",
+  "edad": "12",
+  "hashtag":"fastidio",
+"img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
+  "precio": 150,
+  "oferta": true,
+  "agregado": false
+},
+{
+  "id":7,
+  "name" :"puede que no sea muy listo" ,
+  "edad": "12",
   "hashtag":"fastidio",
 "img": "https://i.pinimg.com/originals/17/86/38/1786384b0cf766483a57b19bfc44789a.jpg",
   "precio": 150,
