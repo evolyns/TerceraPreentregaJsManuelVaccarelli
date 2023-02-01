@@ -1,5 +1,8 @@
 let carrito = [];
 
+/////////////////////////////////////////////////////////////////////////////////
+
+
 // BARRA DE NAVEGACION 
 const barraNav = document.querySelector(".barraNav");
 barraNav.innerHTML = ` <div class="container-fluid  ">
@@ -24,7 +27,9 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
 </div>
 </div> `;
 // FIN BARRA NAVEGACION 
+
 /////////////////////////////////////////////////////////////////////////////////
+
 // TITULO INDEX 
 const tituloIndex = document.querySelector(".tituloIndex");
 tituloIndex.innerHTML = ` 
@@ -36,8 +41,20 @@ tituloIndex.innerHTML = `
 </div>
 `;
 // FIN TITULO INDEX
+
 /////////////////////////////////////////////////////////////////////////////////
 
+// SUBTITULO OFERTAS 
+const textoOfertas = document.querySelector(".textoOfertas")
+textoOfertas.innerHTML = `
+</div class=""> 
+<h3>OFERTAS!</h3>
+</div>`
+// TERMINA SUBTITULO OFERTAS
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// INICIO MOSTRAR LAS OFERTAS 
 const contenedorOfertas = document.querySelector(".ofertas");
 function ofertas(array) {
   const nodos = array.reduce((acc, memes) => {
@@ -73,14 +90,7 @@ function ofertas(array) {
   }, "");
   return nodos;
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////
-const textoOfertas = document.querySelector(".textoOfertas")
-textoOfertas.innerHTML = `
-</div class=""> 
-<h3>OFERTAS!</h3>
-</div>`
-/////////////////////////////////////////////////////////////////////////////////////////
+// FIN MOSTRAR LAS OFERTAS 
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -132,9 +142,9 @@ const agregarAlCarrito = (memes) => {
           close: true,
           gravity: "bottom", // `top` or `bottom`
           position: "right", // `left`, `center` or `right`
-          stopOnFocus: true, // Prevents dismissing of toast on hover
+          stopOnFocus: false, // Prevents dismissing of toast on hover
           style: {
-            background: "linear-gradient(to right,  #C0392B , #96c93d)",
+            background: "linear-gradient(to top,  #000000  , #2D2D2D )",
           },
           onClick: function(){} // Callback after click
         }).showToast();

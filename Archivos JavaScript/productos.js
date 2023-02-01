@@ -42,7 +42,7 @@ tituloProductos.innerHTML = `
 <div class=" container tituloContactoStyle   w-50 mt-5 ">
 <div class =" row    " >
 <div class=" col-md-12  d-flex justify-content-center   ">
-<h1 class=" fs-1" > Contacto</h1>
+<h1 class=" fs-1 text-center " > Aqui encontraras los mejores memes </h1>
 
 </div>
 

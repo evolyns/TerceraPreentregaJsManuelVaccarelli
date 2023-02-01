@@ -1,3 +1,6 @@
+
+
+// INICIO NAV 
 const barraNav = document.querySelector(".barraNav")
 barraNav.innerHTML = ` <div class="container-fluid  ">
 <div class="collapse  navbar-collapse d-flex  justify-content-between  " id="navbarSupportedContent">
@@ -20,8 +23,23 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
   </div>
 </div>
 </div> `
+// FIN NAV 
 /////////////////////////////////////////////////////////////////////////////////
-// MODO OSCURO 
+
+// INICIO TITULO CARRITO 
+const tituloCarrito = document.querySelector(".tituloCarrito")
+tituloCarrito.innerHTML = `
+<div class="col-md-12" >
+<h1> Carrito de compras 
+</h1>
+<h3> Aqui podras visualizar todos los memes elegidos para la compra </h3>
+</div>
+`
+// FIN TITULO CARRITO 
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// INICIO MODO OSCURO 
 const revisaElLocal = ( ) =>{
   const m = localStorage.getItem("modo"),
         isNull = !m;
@@ -64,6 +82,7 @@ localStorage.setItem(clave, valor);
 console.log(localStorage)
 };
 
+// FIN MODO OSCURO 
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -74,8 +93,27 @@ console.log(JSON.parse(localStorage.getItem("carrito")));
 
 let carrito = obtenerSube("carrito");
 console.log(carrito);
+/////////////////////////
+const contenedorBloqueDeTodoElCarrito = document.querySelector(".contieneAlCarritoModoVacio")
+let contieneCarritoBooleano = false;
+
+if (  carrito != undefined){
+  contieneCarritoBooleano = true;
+}
+function empiezaElCarrito (){
+  
+  if (contieneCarritoBooleano){
+    contenedorBloqueDeTodoElCarrito.classList.remove("contieneAlCarritoModoVacio")
+    console.log(contenedorBloqueDeTodoElCarrito)
+    contenedorBloqueDeTodoElCarrito.classList.add(".contieneAlCarritoModoLleno")
+  }
+  
+}
+/////////////////////////
+
 
 function memesCarrito(array) {
+
   const nodos = array.reduce((acc, memes) => {
     return (
       acc +
@@ -100,16 +138,19 @@ function memesCarrito(array) {
           </div>
           </div>
           <div> 
-          <button class="card-carrito" id="borrar-${memes.id}">Quitar</button>   
+          <button class="card-carrito  btnBorrar" id="borrar-${memes.id}">Quitar</button>   
           </div>
       </div>
         `
     );
   }, "");
+empiezaElCarrito()
+
   return nodos;
 }
 const contenedorCarrito = document.querySelector(".contieneAlCarrito");
 contenedorCarrito.innerHTML = memesCarrito(obtenerSube(carrito));
+
 
 const editarCarrito = () => {
   const elementoCarrito = document.querySelectorAll(".card-carrito");
@@ -137,5 +178,8 @@ editarCarrito();
   function borrarCarrito (){
     localStorage.clear();
     carrito = [];
+    contieneCarritoBooleano = false;
 window.location.reload()
   }
+
+

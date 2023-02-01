@@ -1,47 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-<link rel="stylesheet" href="styles/stylesCarrouselHome.css">
-<link rel="stylesheet" href="styles/carrito.css">
-<link rel="stylesheet" href="styles/navegacion.css">
-<link rel="stylesheet" href="styles/darkmode.css">
-<link rel="stylesheet" href="styles/home.css">
-</head>
-<body>
-<header>
-  <nav class="navbar navbar-expand-md fixed-top barraNav ">
-        
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/carrito.css" />
+    <link rel="stylesheet" href="styles/navegacion.css" />
+    <link rel="stylesheet" href="styles/darkmode.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+  </head>
+  <body>
+    <!-- INICIO HEADER  -->
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top barraNav"></nav>
     </header>
-   
+    <!-- FIN HEADER  -->
+
+    <!-- INICIO MAIN  -->
     <main>
-      
+      <!-- INICIO ESPACIO HEADER  -->
+<div class="espacioHeader p-5  " >
+        ♥
+      </div>
+      <!-- INICIO TITULO CARRITO  -->
+      <div class="container">
+        <div class="tituloCarrito" >
 
-        <div class=" container  imagenMemeEnCarrito ">
-          <div class="row contieneAlCarrito  ">
-            
-          </div>
-          
         </div>
-      
-      <div class="ofertas">
-      
-      </div>    
-      <button id="botonCerrarTodo" onclick="borrarCarrito()" >borrar todo</button>
-</main>
-   
-<!-- FOOTER  -->
+      </div>
+      <!-- FIN TITULO CARRITO  -->
+
+      <!-- FIN ESPACIO HEADER  -->
+      <!-- INICIO ARTICULOS DEL CARRITO  -->
+
+      <div class="container imagenMemeEnCarrito  contieneAlCarritoModoVacio">
+        <div class="row d-flex justify-content-start mb-4 mt-4 bg-black w-100 col  ">
+          <div class="col-md-12 ">
+            <button id="botonCerrarTodo"  class="m-2" >
+              Finalizar compra
+            </button>
+            <button id="botonCerrarTodo" onclick="borrarCarrito()">
+              borrar todo
+            </button>
+          </div>
+        </div>
+        <div class="row contieneAlCarrito d-flex justify-content-start  ">
+
+        </div>
+      </div>
+  
+      <!-- FIN ARTICULOS DEL CARRITO  -->
+          
+      <div class="container">
+      </div>
+    </main>
+    <!-- FIN MAIN  -->
 
 
-<!-- FOOTER  -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- INICIO FOOTER  -->
+    <footer class="text-center text-lg-start mt-4 text-muted pieDePagina ">
+      <section
+        class="d-flex justify-content-center footer justify-content-lg-between p-4 align-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <span>La mejor pagina de memes</span>
+        </div>
+      </section>
+    </footer>
+    <!-- FOOTER  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
     <script src="Archivos JavaScript/carrito.js"></script>
-</body>
+  </body>
 </html>

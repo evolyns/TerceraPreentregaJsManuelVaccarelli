@@ -1,5 +1,8 @@
-.imagenMemeEnCarrito{
+.contieneAlCarritoModoVacio{
+    height: 375px;
+    background-color: rgb(255, 255, 255);
+}
+.contieneAlCarritoModoLleno{
     
- 
-   
-    }
+    background-color: rgb(221, 34, 34);
+}
