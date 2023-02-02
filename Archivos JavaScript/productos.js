@@ -191,6 +191,20 @@ const agregarAlCarrito = (memes) => {
             producto.agregado = true;
         pusheamos(carrito, producto);
         sube("carrito", carrito);
+        Toastify({
+          text: "Agregado al carrito",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "bottom", // `top` or `bottom`
+          position: "right", // `left`, `center` or `right`
+          stopOnFocus: false, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to top,  #000000  , #2D2D2D )",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
         
         }
       };

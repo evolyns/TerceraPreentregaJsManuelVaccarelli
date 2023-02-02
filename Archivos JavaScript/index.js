@@ -12,10 +12,10 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
       <a class="nav-link text-white " href="index.html"><h2>Home</h2></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link  text-white " href="productos.html"> <h2>Productos</h2></a>
+      <a class="nav-link  text-white" href="productos.html"> <h2>Productos</h2></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link  text-white" href="carrito.html"><h2>Carrito</h2></a>
+      <a class="nav-link  text-white"href="carrito.html"><h2>Carrito</h2></a>
     </li>
     <li class="nav-item">
       <a class="nav-link text-white " href="contacto.html"><h2>Contacto</h2></a>

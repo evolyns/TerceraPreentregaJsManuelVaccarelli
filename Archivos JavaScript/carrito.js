@@ -172,14 +172,42 @@ const editarCarrito = () => {
 
 editarCarrito();
 
+// COMPRAR Y BORRRAR CARRITO 
+
+function comprarCarrito (){
+  localStorage.clear();
+  carrito = [];
+  contenedorCarrito.innerHTML = ` `
+  precioTotal ()
+  contieneCarritoBooleano = false;
+}
+function borrarCarrito (){
+  localStorage.clear();
+  carrito = [];
+  contenedorCarrito.innerHTML = ` `
+  precioTotal ()
+  contieneCarritoBooleano = false;
+}
+  
 
 
 
-  function borrarCarrito (){
-    localStorage.clear();
-    carrito = [];
-    contieneCarritoBooleano = false;
-window.location.reload()
-  }
+// MOSTRAR PRECIO TOTAL 
+const mostrarTotal = document.querySelector(".mostrarTotal")
+let total =  0
+function precioTotal () {
+  if( total == 0){
+console.log("asd")
+    obtenerSube(carrito).forEach(element => {
+        total = element.precio + total
+        console.log(total)
+        
+      });
+      mostrarTotal.innerHTML = ` Monto Total $  ${total} `
+    }
+    else {
+      mostrarTotal.innerHTML = ` Monto Total $  0 `
 
-
+    }
+}
+precioTotal ()

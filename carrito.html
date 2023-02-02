@@ -34,6 +34,8 @@
 <div class="espacioHeader p-5  " >
         ♥
       </div>
+      <!-- FIN ESPACIO HEADER  -->
+
       <!-- INICIO TITULO CARRITO  -->
       <div class="container">
         <div class="tituloCarrito" >
@@ -42,39 +44,47 @@
       </div>
       <!-- FIN TITULO CARRITO  -->
 
-      <!-- FIN ESPACIO HEADER  -->
+     
       <!-- INICIO ARTICULOS DEL CARRITO  -->
-
       <div class="container imagenMemeEnCarrito  contieneAlCarritoModoVacio">
-        <div class="row d-flex justify-content-start mb-4 mt-4 bg-black w-100 col  ">
-          <div class="col-md-12 ">
-            <button id="botonCerrarTodo"  class="m-2" >
+        <div class="row contieneAlCarrito d-flex justify-content-start  ">
+          
+        </div>
+         <div class="row d-flex  m-4 bg-secondary fixed-bottom recuadroBotonesCarrito    ">
+           <div class="col-md-3 ">
+             <button id="botonCerrarTodo"  class=" m-2 bg-danger  " onclick="borrarCarrito()">
+               borrar todo
+             </button>
+            </div>
+          <div class="col-md-9 d-flex justify-content-end ">
+            <button id="botonCerrarTodo"  class="m-2 bg-success" onclick="comprarCarrito()" >
               Finalizar compra
             </button>
-            <button id="botonCerrarTodo" onclick="borrarCarrito()">
-              borrar todo
-            </button>
+            <h3 class="mostrarTotal m-2 "></h3>
           </div>
         </div>
-        <div class="row contieneAlCarrito d-flex justify-content-start  ">
-
-        </div>
       </div>
+    </div>
+          
+
+
+                
+
   
       <!-- FIN ARTICULOS DEL CARRITO  -->
           
-      <div class="container">
-      </div>
+      
     </main>
     <!-- FIN MAIN  -->
 
 
     <!-- INICIO FOOTER  -->
-    <footer class="text-center text-lg-start mt-4 text-muted pieDePagina ">
+    <footer class="mt-4   fixed-bottom "  >
       <section
-        class="d-flex justify-content-center footer justify-content-lg-between p-4 align-bottom">
-        <div class="me-5 d-none d-lg-block">
+        class="d-flex justify-content-end footer ">
+        <div class=" m-2  text-primary-emphasis ">
           <span>La mejor pagina de memes</span>
+
         </div>
       </section>
     </footer>
@@ -86,5 +96,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="Archivos JavaScript/carrito.js"></script>
+    <script src="Archivos JavaScript/arrmemes.js"></script>
   </body>
 </html>
