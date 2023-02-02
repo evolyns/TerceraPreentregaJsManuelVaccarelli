@@ -175,11 +175,20 @@ editarCarrito();
 // COMPRAR Y BORRRAR CARRITO 
 
 function comprarCarrito (){
+  Toastify({
+    text: "This is a toast",
+    className: "info",
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+      innerHeight: "200px"
+    }
+  }).showToast();
   localStorage.clear();
   carrito = [];
   contenedorCarrito.innerHTML = ` `
   precioTotal ()
   contieneCarritoBooleano = false;
+  
 }
 function borrarCarrito (){
   localStorage.clear();
@@ -210,4 +219,3 @@ console.log("asd")
 
     }
 }
-precioTotal ()

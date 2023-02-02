@@ -60,13 +60,3 @@
 
 
 // // export default memes 
-const mostrarTotal = document.querySelector(".mostrarTotal")
-let total =  0
-function precioTotal () {
-obtenerSube(carrito).forEach(element => {
-    total = element.precio + total
-    console.log(total)
-    
-  });
-  mostrarTotal.innerHTML = ` Monto Total $  ${total} `
-}
