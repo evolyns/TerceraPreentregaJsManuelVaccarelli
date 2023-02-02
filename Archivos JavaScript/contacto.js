@@ -1,7 +1,9 @@
 const contacto = document.querySelector(".contacto")
 const tituloContacto = document.querySelector(".tituloContacto")
 const barraNav = document.querySelector(".barraNav")
+const esPacioFormFooter = document.querySelector(".esPacioFormFooter")
 
+function inicioContacto () {
 barraNav.innerHTML = ` <div class="container-fluid  ">
 <div class="collapse  navbar-collapse d-flex  justify-content-between  " id="navbarSupportedContent">
   <ul class="navbar-nav  mb-2 mb-lg-0  ">
@@ -38,13 +40,12 @@ tituloContacto.innerHTML = `
 </div>  
 </div>
 `
-function inicioContacto () {
 
 contacto.innerHTML = `
-    <div class="container contactoForm w-50 ">
+    <div class="container mb-5 contactoForm w-50 ">
 <div class="row  contacto d-flex justify-content-center recuadroRow ">
 <div class="col-md-6 w-100 ">
-        <div class="mb-3">
+        <div class="mb-1">
             <label for="nombre" class="form-label ">Nombre  (obligatorio) </label>
             <input type="email" class="form-control  cntLetrasContenedor  " id="nombre" aria-describedby="emailHelp">
             </div>
@@ -71,19 +72,16 @@ contacto.innerHTML = `
         </div>
         </div>
         `
+
+
+        esPacioFormFooter.innerHTML = ` asd
+
+`        
     }
     inicioContacto ()
-
-    const pieDePagina = document.querySelector(".pieDePagina")
-    pieDePagina.innerHTML = `
-    <section class="d-flex justify-content-center footer  justify-content-lg-between p-4 ">
-    <div class="me-5 d-none d-lg-block ">
-      <span>La mejor pagina de memes</span>
-    </div>
-</section>
-    
-    `
+     
 /////////////////////////////////////////////////////////////////////////////////
+
 // MODO OSCURO 
 const revisaElLocal = ( ) =>{
     const m = localStorage.getItem("modo"),

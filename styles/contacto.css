@@ -10,7 +10,6 @@
 .contactoForm{
     background-color: rgba(29, 126, 0, 0.87);
     border-radius: 5px;
-   
     border: red double 5px ; 
     padding-top: 15px;
     padding-bottom: 10px;
@@ -21,5 +20,5 @@
 }
 
 .mensajeContacto{
-height: 200px;
+height: 170px;
 }
