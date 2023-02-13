@@ -27,6 +27,7 @@ barraNav.innerHTML = ` <div class="container-fluid  ">
 </div> `
 
 tituloContacto.innerHTML = `
+
 <div class=" container  mt-5 ">
 ♥ para que no tape al contacto ♥
 </div>

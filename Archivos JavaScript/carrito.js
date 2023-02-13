@@ -173,22 +173,28 @@ const editarCarrito = () => {
 editarCarrito();
 
 // COMPRAR Y BORRRAR CARRITO 
-
+let logueado = localStorage.getItem("logueado")
 function comprarCarrito (){
-  Toastify({
-    text: "This is a toast",
-    className: "info",
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-      innerHeight: "200px"
-    }
-  }).showToast();
-  localStorage.clear();
-  carrito = [];
-  contenedorCarrito.innerHTML = ` `
-  precioTotal ()
-  contieneCarritoBooleano = false;
-  
+  if ( logueado){
+
+    Toastify({
+      text: "This is a toast",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        innerHeight: "200px"
+      }
+    }).showToast();
+    localStorage.removeItem("carrito");
+    carrito = [];
+    contenedorCarrito.innerHTML = ` `
+    precioTotal ()
+    contieneCarritoBooleano = false;
+  }
+  else if (!logueado){
+   window.location.href="logeo.html"
+  }
+    console.log(logueado)
 }
 function borrarCarrito (){
   localStorage.clear();
